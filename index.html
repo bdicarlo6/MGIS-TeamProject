@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,8 +13,9 @@
             <div class="logo">AI Service Revolution</div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#calculator">ROI Calculator</a></li>
                 <li><a href="#sectors">Industry Sectors</a></li>
-                <li><a href="#analysis">Cross-Sector Analysis</a></li>
+                <li><a href="#analysis">Analysis</a></li>
                 <li><a href="#global">Global Comparison</a></li>
                 <li><a href="#guide">Implementation Guide</a></li>
                 <li><a href="#sources">Sources</a></li>
@@ -38,6 +40,60 @@
                 <div class="stat">
                     <h2>35-50%</h2>
                     <p>higher customer satisfaction</p>
+                </div>
+            </div>
+            <a href="#calculator" class="cta-button">Calculate Your ROI →</a>
+        </div>
+    </section>
+
+    <!-- ROI Calculator Section - NOW FIRST! -->
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">AI ROI Calculator</h2>
+            <p class="section-subtitle">Estimate the costs and returns of implementing AI in your business</p>
+            
+            <div class="calculator">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label>Industry Sector:</label>
+                        <select id="calc-sector">
+                            <option value="retail">Retail</option>
+                            <option value="hospitality">Hospitality</option>
+                            <option value="financial">Financial Services</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Company Size:</label>
+                        <select id="calc-size">
+                            <option value="small">Small (1-50 employees)</option>
+                            <option value="medium">Medium (51-500 employees)</option>
+                            <option value="large">Large (500+ employees)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>AI Application:</label>
+                        <select id="calc-app">
+                            <option value="chatbot">Customer Service Chatbot</option>
+                            <option value="analytics">Predictive Analytics</option>
+                            <option value="automation">Process Automation</option>
+                        </select>
+                    </div>
+                    <button class="calc-btn" onclick="calculateROI()">Calculate ROI</button>
+                </div>
+                <div id="calc-results" class="calc-results hidden">
+                    <h4>Estimated Results:</h4>
+                    <div class="result-item">
+                        <span>Implementation Cost:</span>
+                        <span id="result-cost" class="result-value">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Expected ROI:</span>
+                        <span id="result-roi" class="result-value">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Time to Profitability:</span>
+                        <span id="result-time" class="result-value">-</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,9 +141,8 @@
             <h2 class="section-title">Cross-Sector Analysis</h2>
             
             <div class="analysis-tabs">
-                <button class="tab-btn active" onclick="showTab('success')">Success Factors</button>
-                <button class="tab-btn" onclick="showTab('failure')">Failure Patterns</button>
-                <button class="tab-btn" onclick="showTab('roi')">ROI Calculator</button>
+                <button class="tab-btn active" onclick="showTab('success', this)">Success Factors</button>
+                <button class="tab-btn" onclick="showTab('failure', this)">Failure Patterns</button>
             </div>
 
             <div id="success" class="tab-content active">
@@ -141,54 +196,6 @@
                         <div>
                             <h4>Lack of Employee Buy-In</h4>
                             <p>Resistance from staff undermines AI implementation effectiveness</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="roi" class="tab-content">
-                <h3>ROI Calculator</h3>
-                <div class="calculator">
-                    <div class="calc-inputs">
-                        <div class="input-group">
-                            <label>Industry Sector:</label>
-                            <select id="calc-sector">
-                                <option value="retail">Retail</option>
-                                <option value="hospitality">Hospitality</option>
-                                <option value="financial">Financial Services</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label>Company Size:</label>
-                            <select id="calc-size">
-                                <option value="small">Small (1-50 employees)</option>
-                                <option value="medium">Medium (51-500 employees)</option>
-                                <option value="large">Large (500+ employees)</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label>AI Application:</label>
-                            <select id="calc-app">
-                                <option value="chatbot">Customer Service Chatbot</option>
-                                <option value="analytics">Predictive Analytics</option>
-                                <option value="automation">Process Automation</option>
-                            </select>
-                        </div>
-                        <button class="calc-btn" onclick="calculateROI()">Calculate ROI</button>
-                    </div>
-                    <div id="calc-results" class="calc-results hidden">
-                        <h4>Estimated Results:</h4>
-                        <div class="result-item">
-                            <span>Implementation Cost:</span>
-                            <span id="result-cost" class="result-value">-</span>
-                        </div>
-                        <div class="result-item">
-                            <span>Expected ROI:</span>
-                            <span id="result-roi" class="result-value">-</span>
-                        </div>
-                        <div class="result-item">
-                            <span>Time to Profitability:</span>
-                            <span id="result-time" class="result-value">-</span>
                         </div>
                     </div>
                 </div>

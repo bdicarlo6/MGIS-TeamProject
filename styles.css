@@ -81,6 +81,7 @@ body {
     justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
 .stat h2 {
@@ -91,6 +92,24 @@ body {
 .stat p {
     font-size: 1rem;
     opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #667eea;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* Sections */
@@ -110,6 +129,117 @@ section {
     font-size: 1.1rem;
     color: #666;
     margin-bottom: 3rem;
+}
+
+/* Calculator Section - NEW PROMINENT STYLING */
+.calculator-section {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 5rem 2rem;
+}
+
+.calculator-section .section-title {
+    color: white;
+    font-size: 3rem;
+}
+
+.calculator-section .section-subtitle {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.3rem;
+}
+
+/* Calculator */
+.calculator {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.calc-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.input-group select {
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.input-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.calc-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 0.5rem;
+}
+
+.calc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.calc-results {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 3px solid #667eea;
+}
+
+.calc-results h4 {
+    font-size: 1.4rem;
+    color: #667eea;
+    margin-bottom: 1.5rem;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-value {
+    font-weight: bold;
+    color: #667eea;
+    font-size: 1.2rem;
+}
+
+.hidden {
+    display: none;
 }
 
 /* Industry Sectors */
@@ -159,10 +289,6 @@ section {
 .sector-details {
     background: #f8f9fa;
     padding: 3rem 2rem;
-}
-
-.hidden {
-    display: none;
 }
 
 .back-btn {
@@ -288,74 +414,6 @@ section {
 .failure-item h4 {
     color: #e53e3e;
     margin-bottom: 0.5rem;
-}
-
-/* Calculator */
-.calculator {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.calc-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.input-group label {
-    font-weight: bold;
-    color: #333;
-}
-
-.input-group select {
-    padding: 0.75rem;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.calc-btn {
-    background: #667eea;
-    color: white;
-    border: none;
-    padding: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.calc-btn:hover {
-    background: #5568d3;
-}
-
-.calc-results {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 2px solid #eee;
-}
-
-.result-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0;
-    font-size: 1.1rem;
-}
-
-.result-value {
-    font-weight: bold;
-    color: #667eea;
 }
 
 /* Global Comparison */
@@ -505,5 +563,9 @@ section {
     
     .section-title {
         font-size: 2rem;
+    }
+    
+    .calculator {
+        padding: 2rem 1.5rem;
     }
 }

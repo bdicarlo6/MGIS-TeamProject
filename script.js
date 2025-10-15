@@ -93,7 +93,7 @@ const sectorData = {
                     "Fraud Prevention": "+60%",
                     "False Positives": "-50%",
                     "Implementation Cost": "$250M",
-                    "ROI"ROI Timeline": "24 months"
+                    "ROI Timeline": "24 months"
                 }
             },
             {
@@ -155,8 +155,8 @@ function hideSectorDetails() {
     document.getElementById('sectors').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Tab switching
-function showTab(tabName) {
+// Tab switching - FIXED VERSION
+function showTab(tabName, clickedButton) {
     // Hide all tab contents
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach(content => content.classList.remove('active'));
@@ -169,16 +169,16 @@ function showTab(tabName) {
     document.getElementById(tabName).classList.add('active');
     
     // Add active class to clicked button
-    event.target.classList.add('active');
+    clickedButton.classList.add('active');
 }
 
-// ROI Calculator
+// ROI Calculator - WORKING VERSION
 function calculateROI() {
     const sector = document.getElementById('calc-sector').value;
     const size = document.getElementById('calc-size').value;
     const app = document.getElementById('calc-app').value;
     
-    // ROI calculation logic (simplified estimates)
+    // ROI calculation logic (simplified estimates based on research)
     const costs = {
         small: { chatbot: 50000, analytics: 75000, automation: 100000 },
         medium: { chatbot: 150000, analytics: 250000, automation: 350000 },
@@ -201,12 +201,19 @@ function calculateROI() {
     const roi = Math.round((cost * roiMultipliers[sector][app] - cost));
     const timeframe = timeframes[size][app];
     
-    // Display results
+    // Display results with formatting
     document.getElementById('result-cost').textContent = `$${cost.toLocaleString()}`;
     document.getElementById('result-roi').textContent = `+$${roi.toLocaleString()} (${Math.round((roi/cost)*100)}%)`;
     document.getElementById('result-time').textContent = `${timeframe} months`;
     
+    // Show results section
     document.getElementById('calc-results').classList.remove('hidden');
+    
+    // Smooth scroll to results
+    document.getElementById('calc-results').scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'nearest' 
+    });
 }
 
 // Smooth scrolling for navigation links
